@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import AccountsTable from "./AccountsTable/AccountsTable";
+import Add_account from "./AddAccount/AddAccount";
 
 class App extends Component {
   state = {
@@ -22,12 +23,25 @@ class App extends Component {
       },
     ],
   };
+  AddNewAccount = (data) => {
+    this.setState({
+      account: [...this.state.account, data],
+    });
+  };
+
   render() {
     return (
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<AccountsTable accounts={this.state.account}/>} />
+          <Route
+            path="/"
+            element={<AccountsTable accounts={this.state.account} />}
+          />
+          <Route
+            path="/Add_account"
+            element={<Add_account AddNewAccount={this.AddNewAccount} />}
+          />
         </Routes>
       </Router>
     );
