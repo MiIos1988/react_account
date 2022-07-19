@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import AccountsTable from "./AccountsTable/AccountsTable";
 import Add_account from "./AddAccount/AddAccount";
+import EditAcccount from "./EditAccount/EditAccount";
 
 class App extends Component {
   state = {
@@ -41,6 +42,10 @@ class App extends Component {
           <Route
             path="/Add_account"
             element={<Add_account AddNewAccount={this.AddNewAccount} />}
+          />
+          <Route
+            path="/edit_delete"
+            element={<EditAcccount accaunts={this.state.account} />}
           />
         </Routes>
       </Router>

@@ -1,6 +1,17 @@
 import React from "react";
 
-const Account = ({ account }) => {
+const Account = ({ account, edit }) => {
+  const actionsButton = edit ? (
+    <>
+      <td>
+        <button className="btn btn-danger"></button>
+      </td>
+      <td>
+        <button className="btn btn-warning"></button>
+      </td>
+    </>
+  ) : null;
+
   return (
     <tr>
       <td>{account.id}</td>
@@ -8,6 +19,7 @@ const Account = ({ account }) => {
       <td>{account.lastname}</td>
       <td>{account.phone}</td>
       <td>{account.email}</td>
+      {actionsButton}
     </tr>
   );
 };

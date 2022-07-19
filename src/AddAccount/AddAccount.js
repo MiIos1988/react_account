@@ -31,7 +31,6 @@ class Add_account extends Component {
       },
     });
   };
-
   render() {
     return (
       <div className="container">
@@ -88,7 +87,9 @@ class Add_account extends Component {
                 <br />
                 <button
                   className="btn btn-primary form-control"
-                  onClick={this.saveAccount}
+                  onClick={() => {
+                    this.saveAccount();
+                  }}
                 >
                   Save
                 </button>
