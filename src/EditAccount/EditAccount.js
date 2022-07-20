@@ -1,10 +1,11 @@
 import React from "react";
 import Account from "../Accaunt/Account";
 
-const EditAcccount = ({ accaunts }) => {
-  const allAccount = accaunts.map((accaunt) => {
-    return <Account accaunt={accaunt} edit={true} />;
+const EditAcccount = ({ accaunts, DeletAccount }) => {
+  const allAccount = accaunts.map((account) => {
+    return <Account account={account} edit={true} key={account.id} DeletAccount={DeletAccount} />;
   });
+
   return (
     <div className="container">
       <div className="row">

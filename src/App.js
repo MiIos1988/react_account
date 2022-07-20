@@ -4,6 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import AccountsTable from "./AccountsTable/AccountsTable";
 import Add_account from "./AddAccount/AddAccount";
 import EditAcccount from "./EditAccount/EditAccount";
+import EditBtnAccount from "./EditBtnAccount/EditBtnAccount";
 
 class App extends Component {
   state = {
@@ -30,6 +31,12 @@ class App extends Component {
     });
   };
 
+  DeletAccount = (id) => {
+    const accountsCopy = [...this.state.account];
+    const newAccountCopy = accountsCopy.filter((account) => account.id !== id);
+    this.setState({ account: newAccountCopy });
+  };
+
   render() {
     return (
       <Router>
@@ -45,8 +52,14 @@ class App extends Component {
           />
           <Route
             path="/edit_delete"
-            element={<EditAcccount accaunts={this.state.account} />}
+            element={
+              <EditAcccount
+                accaunts={this.state.account}
+                DeletAccount={this.DeletAccount}
+              />
+            }
           />
+            <Route path="/edit/:id" element={<EditBtnAccount Accounts={this.state.account}/>} />
         </Routes>
       </Router>
     );
