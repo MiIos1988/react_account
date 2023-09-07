@@ -6,7 +6,7 @@ class EditBtnAccount extends Component {
       account: {
         id: "",
         name: "",
-        lastname: "",
+        lastName: "",
         phone: "",
         email: "",
       }
@@ -36,8 +36,8 @@ class EditBtnAccount extends Component {
                 <br />
                 <input
                   type="text"
-                  id="lastname"
-                  placeholder="lastname"
+                  id="lastName"
+                  placeholder="lastName"
                   className="form-control"
                 />
                 <br />

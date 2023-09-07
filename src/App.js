@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import AccountsTable from "./AccountsTable/AccountsTable";
 import Add_account from "./AddAccount/AddAccount";
-import EditAcccount from "./EditAccount/EditAccount";
+import EditAccount from "./EditAccount/EditAccount";
 import EditBtnAccount from "./EditBtnAccount/EditBtnAccount";
 
 class App extends Component {
@@ -11,15 +11,15 @@ class App extends Component {
     account: [
       {
         id: 1,
-        name: "Danilo",
-        lastname: "Vesovic",
+        name: "Pera",
+        lastName: "Peric",
         phone: "11-11-11",
         email: "danilo@gmail.com",
       },
       {
         id: 2,
         name: "Marko",
-        lastname: "Markovic",
+        lastName: "Markovic",
         phone: "11-22-11",
         email: "marko@gmail.com",
       },
@@ -31,7 +31,7 @@ class App extends Component {
     });
   };
 
-  DeletAccount = (id) => {
+  DeleteAccount = (id) => {
     const accountsCopy = [...this.state.account];
     const newAccountCopy = accountsCopy.filter((account) => account.id !== id);
     this.setState({ account: newAccountCopy });
@@ -53,9 +53,9 @@ class App extends Component {
           <Route
             path="/edit_delete"
             element={
-              <EditAcccount
-                accaunts={this.state.account}
-                DeletAccount={this.DeletAccount}
+              <EditAccount
+                accounts={this.state.account}
+                DeleteAccount={this.DeleteAccount}
               />
             }
           />

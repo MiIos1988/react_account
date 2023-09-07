@@ -6,7 +6,7 @@ class Add_account extends Component {
     account: {
       id: "",
       name: "",
-      lastname: "",
+      lastName: "",
       phone: "",
       email: "",
     },
@@ -25,7 +25,7 @@ class Add_account extends Component {
       account: {
         id: "",
         name: "",
-        lastname: "",
+        lastName: "",
         phone: "",
         email: "",
       },
@@ -59,11 +59,11 @@ class Add_account extends Component {
                 <br />
                 <input
                   type="text"
-                  id="lastname"
-                  placeholder="lastname"
+                  id="lastName"
+                  placeholder="lastName"
                   className="form-control"
                   onChange={this.changeHandler}
-                  value={this.state.account.lastname}
+                  value={this.state.account.lastName}
                 />
                 <br />
                 <input

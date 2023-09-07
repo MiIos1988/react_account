@@ -1,9 +1,9 @@
 import React from "react";
 import Account from "../Accaunt/Account";
 
-const EditAcccount = ({ accaunts, DeletAccount }) => {
-  const allAccount = accaunts.map((account) => {
-    return <Account account={account} edit={true} key={account.id} DeletAccount={DeletAccount} />;
+const EditAccount = ({ accounts, DeleteAccount }) => {
+  const allAccount = accounts.map((account) => {
+    return <Account account={account} edit={true} key={account.id} DeleteAccount={DeleteAccount} />;
   });
 
   return (
@@ -18,7 +18,7 @@ const EditAcccount = ({ accaunts, DeletAccount }) => {
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Lastname</th>
+                    <th>Last Name</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Action</th>
@@ -34,4 +34,4 @@ const EditAcccount = ({ accaunts, DeletAccount }) => {
     </div>
   );
 };
-export default EditAcccount;
+export default EditAccount;
